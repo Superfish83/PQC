@@ -1,5 +1,5 @@
 //
-// psg.cpp
+// prg.cpp
 // This file defines the pseudorandom generator class,
 // and sampling functions from distributions
 //
@@ -7,7 +7,7 @@
 #pragma once
 #include <random>
 #include <chrono>
-#include "polynomial.cpp"
+#include "pkeScheme.h"
 
 using namespace std;
 
@@ -41,7 +41,7 @@ public:
     }
 
     // Samples a polynomial from Discrete Gaussian distribution with std=sigma
-    void sample_DG_poly(Polynomial *poly, double sigma){
+    void sample_DG_poly(Polynomial *poly, double sigma=SIGMA){
         if(!initialized) return;
 
         normal_distribution<double> dis(0.0, sigma);
